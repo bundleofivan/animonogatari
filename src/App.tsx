@@ -4,12 +4,12 @@ import {
   Route,
 } from 'react-router-dom'
 
-import Login from 'views/Login'
+import LoginView from 'views/LoginView'
 
 const Paths = () => {
   return (
     <Routes>
-      <Route path='/' element={<Login />} />
+      <Route path='/' element={<LoginView />} />
       <Route path='/' element={<div>Empty Path</div>} />
     </Routes>
   )

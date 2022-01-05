@@ -4,8 +4,18 @@
 .root {
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.banner {
+    font-size: 3.6rem;
+    padding-bottom: 5rem;
+
+    @media screen and (max-width: $mediumScreen) {
+        font-size: 1.8rem;
+    }
 }
 
 .form {
