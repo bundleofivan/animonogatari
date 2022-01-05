@@ -9,7 +9,7 @@ import Login from 'views/Login'
 const Paths = () => {
   return (
     <Routes>
-      <Route path='/login' element={<Login />} />
+      <Route path='/' element={<Login />} />
       <Route path='/' element={<div>Empty Path</div>} />
     </Routes>
   )
