@@ -1,8 +1,26 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom'
+
+import Login from 'views/Login'
+
+const Paths = () => {
+  return (
+    <Routes>
+      <Route path='/login' element={<Login />} />
+      <Route path='/' element={<div>Empty Path</div>} />
+    </Routes>
+  )
+}
+
+
 const App = () => {
   return (
-    <div>
-      Hi
-    </div>
+    <Router>
+      <Paths />
+    </Router>
   )
 }
 
