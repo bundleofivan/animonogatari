@@ -1,5 +1,5 @@
 {
     "username": "username",
-    "password": "password!",
-    "submit": "submit"
+    "password": "password",
+    "login": "Log In"
 }

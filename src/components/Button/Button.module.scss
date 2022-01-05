@@ -1,0 +1,16 @@
+@import 'shared/styles/colors.scss';
+
+.root {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: $magicMint;
+    transition: background-color 0.25s;
+    cursor: pointer;
+
+    &:hover {
+        transition: background-color 0.25s;
+        background-color: darken($magicMint, 20%);
+    }
+}
