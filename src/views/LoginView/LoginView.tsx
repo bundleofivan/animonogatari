@@ -1,14 +1,11 @@
 import { FormEvent } from 'react'
+import { useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
 import Button from 'components/Button'
+import { login } from 'store/actions/auth'
 
 import styles from './LoginView.module.scss'
-
-const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log('clicked submit')
-}
 
 const Banner = () => {
     const title = "Animonogatari"
@@ -21,6 +18,13 @@ const Banner = () => {
 
 const LoginView = () => {
     const { t } = useTranslation()
+    const dispatch = useDispatch()
+
+    const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        console.log('clicked submit')
+        dispatch(login())
+    }
     const usernameLabel = t('username')
     const passwordLabel = t('password')
     const loginText = t('login')
