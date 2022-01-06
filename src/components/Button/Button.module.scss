@@ -14,4 +14,8 @@
         transition: background-color 0.25s;
         background-color: darken($magicMint, 20%);
     }
+
+    &:active {
+        background-color: darken($magicMint, 40%);
+    }
 }
