@@ -12,6 +12,9 @@
 .banner {
     font-size: 3.6rem;
     padding-bottom: 5rem;
+    color: $independence;
+    font-weight: 600;
+    user-select: none;
 
     @media screen and (max-width: $mediumScreen) {
         font-size: 1.8rem;
@@ -32,8 +35,9 @@
 }
 
 .input {
-    padding: 0.5rem;
+    padding: 0.7rem;
     width: 100%;
     margin-bottom: 1rem;
-    border: solid 0.1rem $independence;
+    border: solid 0.2rem $mauve;
+    border-radius: 0.5rem;
 }
