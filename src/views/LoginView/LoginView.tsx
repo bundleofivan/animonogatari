@@ -44,8 +44,9 @@ const LoginView = () => {
                     <label htmlFor={'password'} hidden>{passwordLabel}</label>
                     <input className={styles.input} type={!!showPassword ? 'text' : 'password'} name={passwordLabel} placeholder={passwordLabel} value={inputPassword} onChange={(e) => dispatch(setPassword(e.target.value))} />
 
-                    <label htmlFor={showPasswordText}>{showPasswordText}</label>
-                    <input type={'checkbox'} name={showPasswordText} checked={showPassword} onChange={() => setShowPassword(!showPassword)} />
+                    {/* TODO: don't use input because of accessibility. Clicking enter will not show password, it will submit the form, use Button instead */}
+                    {/* <label htmlFor={showPasswordText}>{showPasswordText}</label>
+                    <input type={'checkbox'} name={showPasswordText} checked={showPassword} onChange={() => setShowPassword(!showPassword)} /> */}
 
                     <Button type={'submit'}>{loginText}</Button>
                 </form>
