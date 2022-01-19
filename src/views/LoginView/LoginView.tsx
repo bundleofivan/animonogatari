@@ -32,6 +32,7 @@ const LoginView = () => {
     const passwordLabel = t('password')
     const loginText = t('login')
     const showPasswordText = t('showPassword')
+    const hidePasswordText = t('hidePassword')
 
     return (
         <section className={styles.root}>
@@ -44,11 +45,9 @@ const LoginView = () => {
                     <label htmlFor={'password'} hidden>{passwordLabel}</label>
                     <input className={styles.input} type={!!showPassword ? 'text' : 'password'} name={passwordLabel} placeholder={passwordLabel} value={inputPassword} onChange={(e) => dispatch(setPassword(e.target.value))} />
 
-                    {/* TODO: don't use input because of accessibility. Clicking enter will not show password, it will submit the form, use Button instead */}
-                    {/* <label htmlFor={showPasswordText}>{showPasswordText}</label>
-                    <input type={'checkbox'} name={showPasswordText} checked={showPassword} onChange={() => setShowPassword(!showPassword)} /> */}
-
+                    <Button className={styles.passwordTextToggle} color={'mauve'} type={'button'} onClick={() => setShowPassword(!showPassword)}>{!!showPassword ? hidePasswordText : showPasswordText}</Button>
                     <Button type={'submit'}>{loginText}</Button>
+
                 </form>
             </div>
         </section>

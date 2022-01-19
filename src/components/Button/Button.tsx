@@ -2,11 +2,39 @@ import { FC, ButtonHTMLAttributes } from 'react'
 
 import styles from './Button.module.scss'
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+type ButtonVariant = {
+    color?: 'englishViolet' | 'independence'| 'magicMint' | 'orangeYellow' | 'mauve'
+}
 
-const Button:FC<ButtonProps> = ({ children, ...buttonProps }) => {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & ButtonVariant
+
+const Button:FC<ButtonProps> = ({ children, className, color, ...buttonProps }) => {
+    let buttonClass = styles.root
+    if (!!className) buttonClass = `${buttonClass} ${className}`
+
+    switch (color) {
+        case 'englishViolet':
+            buttonClass = `${buttonClass} ${styles.backgroundEnglishViolet}`
+            break;
+        case 'independence':
+            buttonClass = `${buttonClass} ${styles.backgroundIndependence}`
+            break;
+        case 'magicMint':
+            buttonClass = `${buttonClass} ${styles.backgroundMagicMint}`
+            break;
+        case 'orangeYellow':
+            buttonClass = `${buttonClass} ${styles.backgroundOrangeYellow}`
+            break;
+        case 'mauve':
+            buttonClass = `${buttonClass} ${styles.backgroundMauve}`
+            break;  
+        default:
+            buttonClass = `${buttonClass} ${styles.backgroundMagicMint}`
+            break;
+    }
+
     return (
-        <button className={styles.root} {...buttonProps}>
+        <button className={buttonClass} {...buttonProps}>
             {children}
         </button>
     )
