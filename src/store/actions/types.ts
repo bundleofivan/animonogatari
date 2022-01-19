@@ -1,4 +1,6 @@
-export type ActionPayload = Partial<null>
+import { AuthState } from 'store/reducers/auth'
+
+export type ActionPayload = Partial<AuthState>
 
 export type Action = {
     type: string
